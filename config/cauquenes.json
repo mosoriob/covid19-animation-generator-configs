@@ -199,7 +199,7 @@
 		"title": "{{{dataSourceTitle }}}, ${{{date}}}",
 		"dateFormat": "yyyy-MM-dd",
 		"drawMarkers": false,
-		"skipZoom": true,
+		"skipZoom": false,
 		"hideWatermark": false,
 		"seriesLineWidth": 3,
 		"horizontalMin": null,

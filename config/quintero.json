@@ -1,0 +1,170 @@
+{
+	"colorSchemas":
+	{
+		"dark":
+		{
+			"background": "#2E2E2E",
+			"scale":
+			{
+				"color": "#ccc",
+				"font": "30px DejaVu Sans Mono",
+				"offset": 50
+			},
+			"axis": {
+				"color": "white",
+				"font": "40px DejaVu Sans Mono",
+				"offset": 150
+			},
+			"series":
+			{
+				"font": "30px DejaVu Sans Mono",
+				"color": "white",
+				"offset": { "x": 10, "y": 10 }
+			},
+			"date":
+			{
+				"font": "40px DejaVu Sans Mono",
+				"color": "#FF544F"
+			},
+			"watermark": {
+				"font": "50px DejaVu Sans Mono",
+				"background": "#101010",
+				"color": "#FFB000"
+			},
+			"timebar": {
+				"background": "#202020",
+				"foreground": "#FFB000"
+			},
+			"coverOverlay": {
+				"font": "100px DejaVu Sans Mono",
+				"background": "transparent",
+				"color": "transparent"
+			}
+		}
+	},
+	"layouts":
+	{
+		"square":
+		{
+			"canvasSize": [1250, 1250],
+			"plotArea": {
+				"left": 140,
+				"right": 1100,
+				"top": 110,
+				"bottom": 1110
+			},
+			"seriesLabelsArea": {
+				"left": 140,
+				"right": 1240,
+				"top": 110,
+				"bottom": 1110
+			},
+			"circleSize": 7,
+			"datePosition": { "x": 900, "y": 150 },
+			"dateFont":
+			{
+				"size": 30
+			},
+			"watermark":
+			{
+				"area": {
+					"left": 0,
+					"right": 1250,
+					"top": 0,
+					"bottom": 80
+				},
+				"icons":
+				{
+					"twitter": { "x": 35, "y": 22 },
+					"instagram": { "x": 575, "y": 22 },
+					"facebook": { "x": 625, "y": 22 }
+				},
+				"labels":
+				{
+					"covid19statsvid": { "x": 80, "y": 57 },
+					"covid19statsvideos": { "x": 685, "y": 57 }
+				}
+			},
+			"timebar":
+			{
+				"left": 0,
+				"right": 1250,
+				"top": 1245,
+				"bottom": 1250
+			},
+			"coverOverlay":
+			{
+				"left": 0,
+				"right": 1250,
+				"top": 625,
+				"bottom": 0
+			}
+		}
+	},
+	"dataSources": {
+		"chile-sum": {
+			"url": "https://raw.githubusercontent.com/jorgeperezrojas/covid19-data/master/csv/confirmados.csv",
+			"nameColumn": "region",
+			"preProcessor": "sum",
+			"series":
+			[
+				{
+					"name": "sum",
+					"code": "Chile",
+					"color": "#ffa600"
+				}
+			]
+		},
+		"chile-comunas": {
+			"url": "https://raw.githubusercontent.com/jorgeperezrojas/covid19-data/master/csv/confirmados_comunas_interpolado.csv",
+			"nameColumn": "comuna",
+			"series":
+			[
+
+				{
+					"name": "Concón",
+					"code": "Concón",
+					"color": "#F06AFF"
+				},
+				{
+					"name": "Quintero",
+					"code": "Quintero",
+					"color": "#FF6A6F"
+				},
+				{
+					"name": "Puchuncaví",
+					"code": "Puchuncaví",
+					"color": "#72CDFF"
+				},
+				{
+					"name": "Quillota",
+					"code": "Quillota",
+					"color": "#5FB9E1"
+				}
+				]
+		}
+	},
+	"defaults":
+	{
+		"schema": "dark",
+		"layout": "square",
+		"source": "global",
+		"days": 30,
+		"frames": 30,
+		"extraFrames": 300,
+		"horizontalAxisLabel": "total casos confirmados (log)",
+		"verticalAxisLabel": "nuevos casos confirmados (log, ultimos 7 dias)",
+		"zoomEasing": "easeInOutCubic",
+		"timebarEasing": "linear",
+		"title": "{{{dataSourceTitle }}}, ${{{date}}}",
+		"dateFormat": "yyyy-MM-dd",
+		"drawMarkers": false,
+		"skipZoom": true,
+		"hideWatermark": false,
+		"seriesLineWidth": 3,
+		"horizontalMin": null,
+		"horizontalMax": null,
+	    "verticalMin": 1,
+		"verticalMax": null
+	}
+}
